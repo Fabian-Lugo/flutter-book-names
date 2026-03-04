@@ -26,7 +26,7 @@ Una aplicación móvil moderna construida con **Flutter** que permite gestionar 
 -   **Real-time:** [Socket.io Client](https://pub.dev/packages/socket_io_client)
 -   **Visualización:** [Pie Chart](https://pub.dev/packages/pie_chart)
 -   **Estilos:** Google Fonts (Poppins)
--   **Backend (Sugerido):** Node.js con Socket.io Server (no incluido en este repo).
+-   **Backend:** Node.js con Socket.io Server
 
 ---
 
