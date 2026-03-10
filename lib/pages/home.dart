@@ -1,4 +1,4 @@
-import 'dart:io';
+import 'package:flutter/foundation.dart' show kIsWeb, TargetPlatform;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -122,8 +122,29 @@ class _HomePageState extends State<HomePage> {
 
   void addNewBook() {
     final textController = TextEditingController();
+    final isIOS = !kIsWeb && Theme.of(context).platform == TargetPlatform.iOS;
 
-    if (Platform.isAndroid) {
+    if (isIOS) {
+      showCupertinoDialog(
+        context: context,
+        builder: (_) => CupertinoAlertDialog(
+          title: const Text('New book name'),
+          content: CupertinoTextField(controller: textController),
+          actions: [
+            CupertinoDialogAction(
+              isDefaultAction: true,
+              child: const Text('add'),
+              onPressed: () => addBookToList(textController.text),
+            ),
+            CupertinoDialogAction(
+              isDestructiveAction: true,
+              child: const Text('dismiss'),
+              onPressed: () => Navigator.pop(context),
+            ),
+          ],
+        ),
+      );
+    } else {
       showDialog(
         context: context,
         builder: (_) => AlertDialog(
@@ -144,26 +165,6 @@ class _HomePageState extends State<HomePage> {
                   child: const Text('Dismiss'),
                 ),
               ],
-            ),
-          ],
-        ),
-      );
-    } else {
-      showCupertinoDialog(
-        context: context,
-        builder: (_) => CupertinoAlertDialog(
-          title: const Text('New book name'),
-          content: CupertinoTextField(controller: textController),
-          actions: [
-            CupertinoDialogAction(
-              isDefaultAction: true,
-              child: const Text('add'),
-              onPressed: () => addBookToList(textController.text),
-            ),
-            CupertinoDialogAction(
-              isDestructiveAction: true,
-              child: const Text('dismiss'),
-              onPressed: () => Navigator.pop(context),
             ),
           ],
         ),
