@@ -17,7 +17,7 @@ class SocketService with ChangeNotifier {
 
   void initConfig() {
     this._socket = IO.io(
-      'http://192.168.18.235:4050',
+      'https://book-names-server.onrender.com',
       IO.OptionBuilder()
           .setTransports(['websocket']) // for Flutter or Dart VM
           .enableAutoConnect()

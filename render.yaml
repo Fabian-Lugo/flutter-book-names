@@ -1,0 +1,8 @@
+# Render Blueprint: frontend Flutter web (usa el backend ya desplegado)
+services:
+  - type: web
+    name: book-names-app
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
