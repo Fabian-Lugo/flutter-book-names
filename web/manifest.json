@@ -1,6 +1,6 @@
 {
-    "name": "band_name",
-    "short_name": "band_name",
+    "name": "book_name",
+    "short_name": "book_name",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

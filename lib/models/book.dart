@@ -1,10 +1,9 @@
-
 class Book {
-  String? id;
-  String? name;
-  int? votes;
+  final String? id;
+  final String? name;
+  final int? votes;
 
-  Book({
+  const Book({
     this.id,
     this.name,
     this.votes,
@@ -13,6 +12,6 @@ class Book {
   factory Book.fromMap(Map<String, dynamic> obj) => Book(
     id: obj['id'],
     name: obj['name'],
-    votes: obj['votes']
+    votes: obj['votes'],
   );
 }

@@ -1,4 +1,4 @@
-package com.example.band_name
+package com.example.book_name
 
 import io.flutter.embedding.android.FlutterActivity
 
